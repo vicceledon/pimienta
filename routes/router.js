@@ -4,5 +4,6 @@ const router = express.Router();
 const indexController = require("../controller/indexController");
 //asignar uso de los controladores//
 router.get("/", indexController.index);
+router.get("/detalleMenu/:id", indexController.idPlatos);
 //exportar el modulo de rutas//
 module.exports = router;
