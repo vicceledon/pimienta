@@ -25,16 +25,21 @@
         <div class="ps-col m6 ps-padding-large">
           <h1 class="ps-center"><%=about.titulo%></h1>
           <br />
-          <p class="ps-large">
-            <%=about.descripcion%>
-            <!--es necesario incluir este span en el contenido dinámico previo-->
-            <span class="ps-tag ps-light-grey">seasonal</span>
-          </p>
+          <p class="ps-large" id="ps-large-id"><%=about.descripcion%></p>
           <p class="ps-large ps-text-grey ps-hide-medium">
             <%=about.historia%>
           </p>
         </div>
       </div>
+      <script>
+        let impWord = "seasonal";
+        let aboutAux = document.querySelector("#ps-large-id");
+        let aux = aboutAux.innerText.replace(
+          impWord,
+          '<span class="ps-tag ps-light-grey">' + impWord + "</span>"
+        );
+        aboutAux.innerHTML = aux;
+      </script>
 
       <hr />
       <!-- Menu Section -->
